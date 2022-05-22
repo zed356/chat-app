@@ -1,19 +1,9 @@
-import "./App.css";
-import { useEffect, useState } from "react";
+import Login from "./components/login";
 
 function App() {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    (async () => {
-      const d = await fetch("/api");
-      const res = await d.json();
-      setData(res.message);
-    })();
-  }, []);
-
   return (
     <div>
-      <p>{data || "Loading..."}</p>
+      <Login />
     </div>
   );
 }

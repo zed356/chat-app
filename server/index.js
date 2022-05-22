@@ -10,7 +10,7 @@ app.use("/", (req, res, next) => {
 });
 
 app.get("/api", (req, res, next) => {
-  res.json({ message: "Hello" });
+  res.json(JSON.stringify("Hellooo"));
 });
 
 app.listen(PORT);
