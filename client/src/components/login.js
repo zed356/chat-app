@@ -1,7 +1,6 @@
 import { useContext, useRef } from "react";
 
 import { UserContext } from "../context/user-context";
-import classes from "./login.module.css";
 
 const Login = () => {
   const ref = useRef();
@@ -19,8 +18,8 @@ const Login = () => {
   };
 
   return (
-    <div className={classes.container}>
-      <form className={classes} onSubmit={submitHandler}>
+    <div className="flex h-screen justify-center items-center ">
+      <form onSubmit={submitHandler}>
         <div className="flex flex-col relative ">
           <input
             ref={ref}
