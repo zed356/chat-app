@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
+const { mongoAPIKey } = require("./config/keys");
+
 const app = express();
 
 const PORT = process.env.PORT || 8080;
@@ -23,9 +25,7 @@ app.get("/api", (req, res, next) => {
 });
 
 mongoose
-  .connect(
-    "mongodb+srv://tiap:maumau@cluster0.kap9i.mongodb.net/chat-app?authSource=admin&replicaSet=atlas-7exh5g-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true"
-  )
+  .connect(mongoAPIKey || "N/A")
   .then((res) => {
     app.listen(PORT);
   })
